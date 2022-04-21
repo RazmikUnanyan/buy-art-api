@@ -1,0 +1,10 @@
+version: "3"
+services:
+  buy.art:
+    image: buy-art:latest
+    container_name: buy-art
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      -./.env:/app/.env

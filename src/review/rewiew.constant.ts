@@ -1,0 +1,1 @@
+export const NOT_FOUND_ID = "Ошибка при поиске ID"

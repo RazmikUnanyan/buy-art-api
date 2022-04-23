@@ -1,14 +1,12 @@
 import {Body, Controller, Delete, Get, Param, Patch, Post} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import {MainPageModel} from "./main-page.model";
+import {HomePageModel} from "./home-page.model";
 
-@Controller('main-page')
-export class MainPageController {
-    constructor(private readonly configService: ConfigService) {
-    }
+@Controller('home-page')
+export class HomePageController {
 
     @Post('create')
-    async create(@Body() dto: Omit<MainPageModel, '_id'>) {
+    async create(@Body() dto: Omit<HomePageModel, '_id'>) {
     }
 
     @Get(':id')
@@ -20,6 +18,6 @@ export class MainPageController {
     }
 
     @Patch(':id')
-    async patch(@Param(':id') id: string, dto: MainPageModel) {
+    async patch(@Param(':id') id: string, dto: HomePageModel) {
     }
 }

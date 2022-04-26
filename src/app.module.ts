@@ -14,8 +14,8 @@ import {getMongoConfig} from "./configs/mongo.config";
         ConfigModule.forRoot(),
         TypegooseModule.forRootAsync({
             imports: [ConfigModule],
-            useFactory: getMongoConfig,
             inject: [ConfigService],
+            useFactory: getMongoConfig,
         }),
         AuthModule,
         HomePageModule,

@@ -1,4 +1,4 @@
-import {BadGatewayException, Body, Controller, HttpCode, Post, UsePipes, ValidationPipe} from '@nestjs/common';
+import {BadGatewayException, Body, Controller, Get, HttpCode, Post, UsePipes, ValidationPipe} from '@nestjs/common';
 import {AuthDto} from "./dto/auth.dto";
 import {AuthService} from "./auth.service";
 import { USER_ALREADY_EXISTS } from './user.constant';
@@ -18,6 +18,12 @@ export class AuthController {
         return this.authService.createUser(dto)
 
     }
+
+    @Get('all')
+    async get() {
+        return await this.authService.getAll()
+    }
+
 
     @HttpCode(200)
     @Post('login')

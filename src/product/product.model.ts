@@ -3,8 +3,6 @@ import {Base, TimeStamps} from "@typegoose/typegoose/lib/defaultClasses";
 
 export interface ProductModel extends Base{}
 export class ProductModel extends TimeStamps {
-    @prop()
-    image: string;
 
     @prop()
     title: string;
@@ -17,6 +15,15 @@ export class ProductModel extends TimeStamps {
 
     @prop()
     oldPrice: number;
+
+    @prop({default:0})
+    like?: number;
+
+    @prop({default:0})
+    views?: number;
+
+    @prop()
+    imagePath: number;
 
     @prop({type: ()=> [String]})
     category: string[];
